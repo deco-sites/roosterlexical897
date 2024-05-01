@@ -224,69 +224,26 @@ export default function BlogPosts({
   const ContainerComponent = page === 0 ? Container : Fragment;
 
   return (
-    <ContainerComponent>
-      <>
-        <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-          {posts.slice(from, to).map((post) => (
-            <a
-              href={`/blog/${post.slug}`}
-              class="border border-secondary overflow-hidden rounded-lg"
-            >
-              <Image
-                width={380}
-                height={274}
-                class="object-fit w-full"
-                sizes="(max-width: 640px) 100vw, 30vw"
-                src={post.image || ""}
-                alt={post.image}
-                decoding="async"
-                loading="lazy"
+      <div class="container mx-auto py-8">
+      <div class="overflow-x-auto whitespace-nowrap">
+          <div class="inline-block bg-white p-4 rounded-lg shadow-md mr-4" style="width: 320px;">
+              <Image 
+              src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/8677/cb6046cb-8023-4cb5-80a5-59095d84e821" 
+              alt="Placeholder Image"
               />
-              <div class="p-6 space-y-4">
-                <div class="font-semibold">{calculateReadingTime(post.content.split(" ").length)}</div>
-                <div class="space-y-2">
-                  <h3 class="text-2xl">{post.title}</h3>
-                  <p class="text-base">{post.excerpt}</p>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  {post.categories?.map((category) => (
-                    <div class="badge badge-lg badge-primary text-xs">
-                      {category.name}
-                    </div>
-                  ))}
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  <span>{post.date
-                    ? new Date(post.date).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })
-                    : ""}</span>
-                  <span>•</span>
-                  <span>{post.authors[0]?.name}</span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-        {to < posts.length && (
-          <div class="flex justify-center w-full" id={postList}>
-            <button
-              hx-get={fetchMoreLink}
-              hx-swap="outerHTML"
-              hx-target={`#${postList}`}
-              aria-label={cta.text}
-              class="btn btn-primary"
-            >
-              <span class="inline [.htmx-request_&]:hidden">
-                {cta.text}
-              </span>
-              <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
-            </button>
+              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
-        )}
-      </>
-    </ContainerComponent>
+
+          <div class="inline-block bg-white p-4 rounded-lg shadow-md mr-4" style="width: 320px;">
+              <Image 
+              src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/8677/cb6046cb-8023-4cb5-80a5-59095d84e821" 
+              alt="Placeholder Image"
+              />
+              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+
+
+        </div>
+    </div>
   );
 }

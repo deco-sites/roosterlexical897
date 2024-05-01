@@ -119,7 +119,10 @@
     "__resolveType": "site/sections/Hero.tsx",
     "placement": "left",
     "cta": [],
-    "title": "Click here to tweak this text however you want."
+    "title": "Click here to tweak this text however you want.",
+    "texto": "Click here to tweak this text however you want.",
+    "textoDescritivo": "<p>Teste</p>",
+    "logo": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/8677/de7d5327-ba15-4526-b3dd-1f7e56f92943"
   },
   "Preview /sections/ImageWithParagraph.tsx": {
     "__resolveType": "site/sections/ImageWithParagraph.tsx",
@@ -136,7 +139,8 @@
     }
   },
   "Preview /sections/Testimonials.tsx": {
-    "__resolveType": "site/sections/Testimonials.tsx"
+    "__resolveType": "site/sections/Testimonials.tsx",
+    "slides": []
   },
   "Preview site/sections/Hero.tsx": {
     "__resolveType": "site/sections/Hero.tsx"
@@ -493,9 +497,6 @@
         "__resolveType": "site/sections/Hero.tsx",
         "title": "<p>Click here to tweak this text however you want.</p>",
         "description": "This text is entirely editable, tailor it freely."
-      },
-      {
-        "__resolveType": "Footer"
       }
     ],
     "__resolveType": "website/pages/Page.tsx",
@@ -530,7 +531,23 @@
     },
     "firstByteThresholdMS": false,
     "theme": {
-      "__resolveType": "Neutral"
+      "__resolveType": "My Theme"
+    }
+  },
+  "Teste_scroller": {
+    "__resolveType": "site/sections/BlogPosts.tsx",
+    "posts": []
+  },
+  "My Theme": {
+    "__resolveType": "site/sections/Theme/Theme.tsx",
+    "buttonStyle": {
+      "--border-btn": "1px",
+      "--rounded-btn": "0.2rem",
+      "--btn-focus-scale": "0.9",
+      "--animation-btn": "0.25s"
+    },
+    "mainColors": {
+      "base-100": "#231F20"
     }
   }
 }

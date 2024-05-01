@@ -13,23 +13,15 @@ export interface Props {
    * @format rich-text
    * @default Click here to tweak this text however you want.
    */
-  title?: string;
-  description?: string;
-  image?: ImageWidget;
-  placement?: "left" | "right";
+  textoDescritivo: string;
+  logo?: ImageWidget;
   cta?: CTA[];
 }
 
-const PLACEMENT = {
-  left: "flex-col text-left lg:flex-row-reverse",
-  right: "flex-col text-left lg:flex-row",
-};
 
 export default function HeroFlats({
-  title = "Click here to tweak this text however you want.",
-  description = "This text is entirely editable, tailor it freely.",
-  image,
-  placement = "left",
+  textoDescritivo,
+  logo,
   cta,
 }: Props) {
   return (
@@ -49,12 +41,12 @@ export default function HeroFlats({
         </div>
         
         {/* Second sub-column */}
-        <div className="flex flex-col overflow-auto p-8">
+        <div className="flex flex-col overflow-auto p-10">
           
           {/* First division */}
-          <div className="flex flex-col">
+          <div className="flex flex-col pb-20">
             <Image 
-              src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04" 
+              src={logo}
               alt="Your image" 
               width = {200}
               />
@@ -62,17 +54,7 @@ export default function HeroFlats({
           
           {/* Second division */}
           <div className="flex flex-col h-1/3 overflow-auto mb-4 overflow-y-auto max-h-40 p-2 w-[30vw] h-[70vw]">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. 
-              Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet 
-              et, porttitor at sem. Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. 
-              Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-              posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. 
-              Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet 
-              et, porttitor at sem. Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. 
-              Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-              posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-            </p>
+              <p>Teste{textoDescritivo}</p>
           </div>
           
           {/* Third division (empty) */}
