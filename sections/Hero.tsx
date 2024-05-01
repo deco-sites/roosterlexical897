@@ -33,63 +33,58 @@ export default function HeroFlats({
   cta,
 }: Props) {
   return (
-    <div>
-      <div class="flex flex-col gap-8 items-center mx-auto">
-        <div
-          class={`flex w-full xl:container xl:mx-auto py-20 mx-5 md:mx-10 z-10 ${
-            image
-              ? PLACEMENT[placement]
-              : "flex-col items-center justify-center text-center"
-          } lg:pt-36 lg:pb-20 gap-12 md:gap-20 items-center`}
-        >
-          {image && (
+    <div className="flex h-screen">
+      {/* Left column */}
+      <div className="flex w-1/2">
+        {/* First sub-column */}
+        <div className="flex flex-col w-1/12">
+          <div className="h-10 bg-gray-200">
             <Image
-              width={640}
-              class="lg:w-1/2 object-fit w-full"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={image}
-              alt={image}
-              decoding="async"
-              loading="lazy"
-            />
-          )}
-          <div
-            class={`mx-6 lg:mx-auto lg:w-full space-y-4 gap-4 ${
-              image
-                ? "lg:w-1/2 lg:max-w-xl"
-                : "flex flex-col items-center justify-center lg:max-w-3xl"
-            }`}
-          >
-            <div
-              class="font-medium inline-block leading-[100%] lg:text-[80px] text-4xl tracking-[-2.4px]"
-              dangerouslySetInnerHTML={{
-                __html: title,
-              }}
-            >
-            </div>
-            <p class="leading-[150%] md:text-md text-lg">
-              {description}
-            </p>
-            {cta && cta.length > 0 &&
-              (
-                <div class="flex gap-3 items-center lg:pt-20">
-                  {cta?.map((item) => (
-                    <a
-                      key={item?.id}
-                      id={item?.id}
-                      href={item?.href}
-                      target={item?.href.includes("http") ? "_blank" : "_self"}
-                      class={`font-normal btn btn-primary ${
-                        item.outline && "btn-outline"
-                      }`}
-                    >
-                      {item?.text}
-                    </a>
-                  ))}
-                </div>
-              )}
+                src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04"
+                alt="Image"
+              />
           </div>
         </div>
+        {/* Second sub-column */}
+        <div className="flex flex-col w-11/12 overflow-auto">
+          {/* Scrollable text content goes here */}
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. 
+            Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet 
+            et, porttitor at sem. Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. 
+            Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+            posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+          </p>
+          {/* Add more text as needed */}
+        </div>
+      </div>
+      
+      {/* Right column */}
+      <div className="h-full w-1/2 overflow-auto">
+        {/* Scrollable list content goes here */}
+        <ul className="overflow-y-auto max-h-80 border border-gray-300 rounded p-4 scrollable-list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          {/* Add more list items as needed */}
+        </ul>
       </div>
     </div>
   );
