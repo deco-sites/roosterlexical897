@@ -1,13 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
-export interface CTA {
-  id?: string;
-  href: string;
-  text: string;
-  outline?: boolean;
-}
-
 export interface Props {
   /** 
    * @format rich-text
@@ -15,14 +8,12 @@ export interface Props {
    */
   textoDescritivo: string;
   logo?: ImageWidget;
-  cta?: CTA[];
 }
 
 
 export default function HeroFlats({
   textoDescritivo,
   logo,
-  cta,
 }: Props) {
   return (
     <div className="flex h-screen">
@@ -44,50 +35,39 @@ export default function HeroFlats({
         <div className="flex flex-col overflow-auto p-10">
           
           {/* First division */}
-          <div className="flex flex-col pb-20">
+          <div className="flex flex-col pb-15">
             <Image 
               src={logo}
               alt="Your image" 
-              width = {200}
+              width = {500}
               />
           </div>
           
           {/* Second division */}
-          <div className="flex flex-col h-1/3 overflow-auto mb-4 overflow-y-auto max-h-40 p-2 w-[30vw] h-[70vw]">
-              <p>Teste{textoDescritivo}</p>
+          <div className="flex flex-col h-1/3 overflow-auto mb-4 overflow-y-auto max-h-60 p-2 w-[30vw] h-[70vw]">
+              <p>{textoDescritivo}</p>
           </div>
           
           {/* Third division (empty) */}
-          <div className="flex flex-col items-center justify-center"></div>
+          <div className="flex flex-col items-center justify-center">
+            <p>post</p>
+          </div>
         </div>
       </div>
       
       {/* Right column */}
       <div className="h-full w-1/2 overflow-auto">
         {/* Scrollable list content goes here */}
-        <ul className="overflow-y-auto max-h-80 border border-gray-300 rounded p-4 scrollable-list">
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-          <li>Item 5</li>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-          <li>Item 5</li>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-          <li>Item 5</li>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-          <li>Item 5</li>
-          {/* Add more list items as needed */}
-        </ul>
+        <div class="flex overflow-x-scroll">
+          <div class="flex-none w-48 h-24 bg-gray-700 mr-1">Item 1</div>
+          <div class="flex-none w-48 h-24 bg-gray-700 mr-1">Item 2</div>
+          <div class="flex-none w-48 h-24 bg-gray-700 mr-1">Item 3</div>
+          <div class="flex-none w-48 h-24 bg-gray-700 mr-1">Item 4</div>
+          <div class="flex-none w-48 h-24 bg-gray-700 mr-1">Item 1</div>
+          <div class="flex-none w-48 h-24 bg-gray-700 mr-1">Item 2</div>
+          <div class="flex-none w-48 h-24 bg-gray-700 mr-1">Item 3</div>
+          <div class="flex-none w-48 h-24 bg-gray-700 mr-1">Item 4</div>
+        </div>
       </div>
     </div>
   );
