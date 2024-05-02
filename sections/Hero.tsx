@@ -59,20 +59,22 @@ export default function HeroFlats({
       <div class="h-full w-1/2 overflow-auto">
         {/* Scrollable list content goes here */}
         <div class="flex overflow-x-scroll h-full">
-          <div class="flex-none w-60 h-full bg-gray-700 mr-1">
-            <div class="absolute bg-blue-700 h-36 bottom-0">
-              <p class="-rotate-90 text-left">Item 1</p>
-            </div>
+          <div class="flex-none w-64 h-full bg-gray-700 mr-1 relative">
+          <div class="absolute inset-x-0 bottom-0 bg-blue-700 h-96 flex justify-center items-center">
+            <p class="transform -rotate-90 text-center">
+              <span class="font-bold">2024</span> <span>V.14 n.01</span>
+            </p>
           </div>
-          <div class="flex-none w-48 h-full bg-gray-700 mr-1">Item 2</div>
-          <div class="flex-none w-48 h-full bg-gray-700 mr-1">Item 3</div>
-          <div class="flex-none w-48 h-full bg-gray-700 mr-1">Item 4</div>
-          <div class="flex-none w-48 h-full bg-gray-700 mr-1">Item 1</div>
-          <div class="flex-none w-48 h-full bg-gray-700 mr-1">Item 2</div>
-          <div class="flex-none w-48 h-full bg-gray-700 mr-1">Item 3</div>
-          <div class="flex-none w-48 h-full bg-gray-700 mr-1">Item 4</div>
+        </div>
+        <div class="flex-none w-64 h-full bg-gray-700 mr-1 relative">
+          <div class="absolute inset-x-0 bottom-0 bg-blue-700 h-96 flex justify-center items-center">
+            <p class="transform -rotate-90 text-center">
+              <span class="font-bold">2024</span> <span>V.14 n.01</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
   );
 }
